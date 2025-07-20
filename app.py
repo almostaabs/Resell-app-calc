@@ -11,6 +11,10 @@ CORS(app)  # Enable CORS for all routes
 # Initialize predictor
 predictor = PropertyValuePredictor()
 
+@app.route('/')
+def home():
+    return "App is running!"  # or render_template('index.html')
+
 @app.route('/api/predict', methods=['POST'])
 def api_predict():
     """API endpoint for ML + ROI prediction"""
