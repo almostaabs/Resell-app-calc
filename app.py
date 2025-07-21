@@ -11,9 +11,9 @@ CORS(app)  # Enable CORS for all routes
 # Initialize predictor
 predictor = PropertyValuePredictor()
 
-@app.route('/')
+@app.route("/")
 def home():
-    return "App is running!"  # or render_template('index.html')
+    return jsonify({"status": "success", "message": "App is running!"})
 
 @app.route('/api/predict', methods=['POST'])
 def api_predict():
